@@ -13,6 +13,7 @@ class transaction;
 	
 	// Logic for deep copy of the transaction packet
 	function transaction copy();
+      	copy 		 = new();
 		copy.din 	 = this.din;
 		copy.newd 	 = this.newd;
 		copy.rx 	 = this.rx;
