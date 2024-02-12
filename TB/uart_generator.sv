@@ -13,7 +13,7 @@ class generator;
 	// Constructor function
 	function new (mailbox #(transaction) GEN2DRV);
 		xtn_gen 	 = new();
-		this.xtn_gen = GEN2DRV;
+		this.gen2drv = GEN2DRV;
 	endfunction
 	
 	task run();
@@ -32,7 +32,7 @@ class generator;
 			@(drv_next);	// wait for DRV to send to DUT
 			@(sb_next);		// wait for SB to compare single XTN
 		end
-		->(gen_done);		// tells whole Verif. Env to stop the simulation after requested no of stimulus are sent
+		->gen_done;		// tells whole Verif. Env to stop the simulation after requested no of stimulus are sent
 	endtask
 	
 endclass
